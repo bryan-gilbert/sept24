@@ -1,6 +1,7 @@
 FROM nginx
 
 ARG DOMAIN
+RUN echo "DOMAIN $DOMAIN"
 
 COPY content /usr/share/nginx/html
 
