@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "": ""
+  },
+  "scriptsComments": {
+    "docs:dev": "Start the vuepress doc server",
+    "docs:build": "Build the vuepress doc files",
+    "": ""
+  },
+  "devDependencies": {
+    "vuepress": "^1.1.0"
+  }
+}
