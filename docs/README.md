@@ -1,19 +1,18 @@
-# Sept 24 2019 Workshop
+# Basic Docker
 
-> Docker and small scale production ready apps
-
-> #1 When: Tuesday May 14th 5:30 to 7:30
-> #2 When: Tuesday June 25th 5:30 to 7:30
-
+> A workshop about docker. 
+> Tuesday Sept 24th 5:30 to 7:30
 
 ## Agenda
 
-What: Dockerize a small scale application for development and production environments: discussion and workshop:
+What: Introduction DevOp **containerization** and **orchestration** with Docker and Docker Compose.
 
 Where: Alliance room at Quartech's office. 2nd floor 1012 Douglas Street (Quartech has generously allowed us to use this
 meeting room and will provide some pizzas and beverages too.)
 
 The problems we’ll address include
+
+BRYAN UPDATE THIS LIST
 - set up a secure production server suitable for small scale application
 - passing secrets into the application
 - securing MongoDB inside a container
@@ -35,53 +34,27 @@ Agenda:
 
 ## Preparation 
 
-You need to install
-- docker (requires you create a free Docker Hub account)
-- npm/node
-- git 
-- your favourite IDE
+- what's your OS? Windows, Mac, Linux?
+- can you run terminal on your laptop
+- can you cd, cat, ls?
+- can you vi, vim or emac or..?
+- can you run ssh
+ 
+## A simple "What is Docker and Docker Compose?"
 
-Here are some links you may find useful:
+Docker containerizes applications.  A beginners way to think of a container is like a virtual server.  A container has
+an operating system and applications and does something for the outside world.  But this is a crude analogy and 
+we'll discuss this more during the workshop.
 
-- [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/docker-for-mac/install/)
-- [https://docs.docker.com/docker-for-windows/install/](https://docs.docker.com/docker-for-windows/install/)
+Docker Compose orchestrates containers.  It tells docker to build and run a set of containers and it creates a network
+for these containers to communicate with each other. Docker compose is mainly suitable for running a set of 
+containers on a single machine.  When you get larger then you will look to OpenShift and/or Kubernetes for your orchestration needs. 
 
-Node NPM
-
-- [https://www.npmjs.com/get-npm](https://www.npmjs.com/get-npm)
-
-For session #2 (June 25th) review all the material in Stage 1. We will start the second sesson with a quick review and then
-dive into stage 2.  
-
-## About the workshop stages
-This workshop is broken down into three stages. Combined these stages take us from a bare server through to a production
-ready web app with server api backed by a database.
+## The workshop stages
+This workshop is broken down into ,,,
 
 ### Stage 1
-Set up a secure production server
+...
 
-### Stage 2
-Set up a web site
+Next stage .. go to [preparation](./preparation)
 
-### Stage 3
-Set up an API backed by a secure database.
-
-## 12 Factor
-This project strives to achieve [the 12 factors](https://12factor.net/) of modern era software development
-
- . | Factor | How we do it
--- | ------ | ------------
-I. | Codebase | One repository
-II. | Dependencies | All dependencies are declared in package.json files
-III. | Config | Critical configuration is externalized and imported during docker startup
-IV. | Backing services | 
-V. | Build, release, run | 
-VI. | Processes | 
-VII. | Port binding | Services are exported via port binding
-VIII. | Concurrency | 
-IX. | Disposability | Containerized the processes. They can be discarded and rebuilt
-X. | Dev/prod parity | Development and production are as similar as possible
-XI. | Logs | 
-XII. | Admin processes | 
-  
-  

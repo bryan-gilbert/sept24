@@ -9,7 +9,8 @@ module.exports = {
     displayAllHeaders: true,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Stage1', link: '/stage1/' },
+      { text: 'Pre-prep by host', link: '/antes/' },
+      { text: 'First Step', link: '/preparation/' },
       { text: 'Certbot', link: '/certbot/' },
     ],
     sidebar: [
@@ -20,10 +21,10 @@ module.exports = {
         ]
       },
       {
-        title: 'Stage1',
+        title: 'First Steps',
         children: [
-          '/stage1/',
-          '/stage1/server.md'
+          '/preparation/',
+          '/preparation/handsOn.md'
         ]
       },
       {
@@ -31,6 +32,12 @@ module.exports = {
         children: [
           '/certbot/',
           '/certbot/install',
+        ]
+      },
+      {
+        title: 'Workshop setup',
+        children: [
+          '/antes/'
         ]
       }
     ]
