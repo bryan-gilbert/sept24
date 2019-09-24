@@ -1,4 +1,4 @@
-# Preparation 
+# Step 1 
 > Get your laptops ready and connected
 
 ## Project files in the ```prep``` folder
@@ -90,6 +90,6 @@ Will update this section
 
 BRYAN update this section
 
-## Hands On
-Look at the handsOn readme to try out the above.
+## Next ...
+Look at the [handsOn](handsOn.md) readme to try out the above. 
 

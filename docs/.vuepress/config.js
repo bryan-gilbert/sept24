@@ -9,8 +9,9 @@ module.exports = {
     displayAllHeaders: true,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Pre-prep by host', link: '/antes/' },
-      { text: 'Workshop', link: '/workshop/' }
+      { text: 'Step 1', link: '/step1/' },
+      { text: 'Step 2', link: '/step2/' },
+      { text: 'Pre-prep by host', link: '/antes/' }
     ],
     sidebar: [
       {
@@ -20,10 +21,17 @@ module.exports = {
         ]
       },
       {
-        title: 'Workshop',
+        title: 'Step 1',
         children: [
-          '/workshop/',
-          '/workshop/handsOn.md'
+          '/step1/',
+          '/step1/handsOn.md'
+        ]
+      },
+      {
+        title: 'Step 2',
+        children: [
+          '/step2/',
+          '/step2/handsOn.md'
         ]
       },
       {

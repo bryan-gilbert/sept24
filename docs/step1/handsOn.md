@@ -1,4 +1,4 @@
-# Preparation - Hands On 
+# Step 1 - Hands On 
 
 ## What you will be given during the workshop
 
@@ -80,3 +80,6 @@ docker-compose -f d-c.yml up --build
 ```
 Return to your browser and refresh   http://your_domain.  See the content?  Return to your DO server and Ctrl-C to stop.
 
+
+## Next ...
+Next we'll look at [Step 2](../step2)  
