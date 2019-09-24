@@ -1,0 +1,14 @@
+version: "3"
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - DOMAIN
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./content/:/usr/share/nginx/html
+      - ./logs/:/var/log/nginx/

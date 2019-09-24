@@ -10,21 +10,12 @@ What: Introduction DevOp **containerization** and **orchestration** with Docker 
 Where: Alliance room at Quartech's office. 2nd floor 1012 Douglas Street (Quartech has generously allowed us to use this
 meeting room and will provide some pizzas and beverages too.)
 
-The problems we’ll address include
-
-BRYAN UPDATE THIS LIST
+Today we will 
 - set up a secure production server suitable for small scale application
-- passing secrets into the application
-- securing MongoDB inside a container
-- handling OS specific dependencies
-- proxying API calls
+- Learn the essentials of using Docker
+- pass secrets into the containerized applications
+- share data with the containers
 - using the same configuration for both development and production with minimal differences.
-and more
-
-We’ll be using NodeJS with Express and MongoDB to create an API micro-service.
-On development we'll have a hot-swapping Vue client.
-On production will use static files served by Nginx.
-Nginx will also proxy the API calls. The whole environment will be built with docker-compose.
 
 Agenda:
 - greetings and introductions
@@ -50,11 +41,7 @@ Docker Compose orchestrates containers.  It tells docker to build and run a set 
 for these containers to communicate with each other. Docker compose is mainly suitable for running a set of 
 containers on a single machine.  When you get larger then you will look to OpenShift and/or Kubernetes for your orchestration needs. 
 
-## The workshop stages
-This workshop is broken down into ,,,
+## Next ...
 
-### Stage 1
-...
-
-Next stage .. go to [preparation](./preparation)
+Next step .. go to [workshop](./workshop)
 

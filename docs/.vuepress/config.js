@@ -10,8 +10,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Pre-prep by host', link: '/antes/' },
-      { text: 'First Step', link: '/preparation/' },
-      { text: 'Certbot', link: '/certbot/' },
+      { text: 'Workshop', link: '/workshop/' }
     ],
     sidebar: [
       {
@@ -21,17 +20,10 @@ module.exports = {
         ]
       },
       {
-        title: 'First Steps',
+        title: 'Workshop',
         children: [
-          '/preparation/',
-          '/preparation/handsOn.md'
-        ]
-      },
-      {
-        title: 'Certbot',
-        children: [
-          '/certbot/',
-          '/certbot/install',
+          '/workshop/',
+          '/workshop/handsOn.md'
         ]
       },
       {
