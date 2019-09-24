@@ -11,6 +11,7 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: 'Step 1', link: '/step1/' },
       { text: 'Step 2', link: '/step2/' },
+      { text: 'Useful Stuff', link: '/utils/' },
       { text: 'Pre-prep by host', link: '/antes/' }
     ],
     sidebar: [
@@ -32,6 +33,12 @@ module.exports = {
         children: [
           '/step2/',
           '/step2/handsOn.md'
+        ]
+      },
+      {
+        title: 'Useful Stuff',
+        children: [
+          '/utils/'
         ]
       },
       {
