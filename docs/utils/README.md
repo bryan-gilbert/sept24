@@ -32,3 +32,5 @@ docker-compose -f d-c.yml up -d
 docker-compose -f d-c.yml down
 
 ```
+
+[remove images etc](https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes)
