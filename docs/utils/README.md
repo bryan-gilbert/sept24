@@ -1,6 +1,6 @@
-# Useful things
+# Useful Stuff
 
-# Docker commands
+## Docker commands
 
 ```
 # to list all active containers
@@ -18,7 +18,7 @@ docker rm $(docker ps -a -q)
 docker system prune 
 ```
 
-# Docker Compose
+## Docker Compose
 
 ```bash
 # To build and run the containers defined in d-c.yml
