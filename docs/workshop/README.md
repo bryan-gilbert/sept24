@@ -68,12 +68,15 @@ that you really need to run nginx in a container.  Except the image is so basic 
 file to something like the one we have.  It needs to say listen on port 80 and what the server name is.  That is what
 is happening starting at line 8. 
 
-    WORKDIR /etc/nginx/conf.d/ 
-
+```
+WORKDIR /etc/nginx/conf.d/ 
+```
 This sets the current working directory within the nginx image.  All commands from this point on are relative to this directory.
 Next line 9 removes the default conf file that comes with the image and line 10 replaces it with ours.
 
-    ARG DOMAIN
+```
+ARG DOMAIN
+```
 Line 3 declares to Docker that this file expects to be given an environment variable. There are several nuances around these
 values.  For one the placement after the FROM is significant and in our case we don't need to provide a default value.
 You can learn more about these nuances in the docs.
@@ -83,7 +86,9 @@ Line 12 ```RUN sed ...``` runs the command sed which does a search and replace o
 
 ### d-c.yml
 The last file in the prep folder is the one that pulls it all together. It is the Docker Compose configuration file.
+Will update this section
 
+BRYAN update this section
 
 ## Hands On
 Look at the handsOn readme to try out the above.

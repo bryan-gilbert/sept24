@@ -26,16 +26,20 @@ Agenda:
 ## Participant setup ...
 
 Clone this repository
-
-  git clone https://github.com/bryan-gilbert/sept24.git
+```
+git clone https://github.com/bryan-gilbert/sept24.git
+```
 
 Run 
-
-  npm install
+```
+npm install
+```
   
 The spin up the VuePress based documentation web server locally with
 
-  npm run docs:dev
+```
+npm run docs:dev
+```
   
 Once the local server is ready you can visit [http://localhost:8081/sept24/](http://localhost:8081/sept24/)
 and read the documents.  Or read the markdown files in the docs folder.

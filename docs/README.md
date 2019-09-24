@@ -30,7 +30,7 @@ Agenda:
 - can you cd, cat, ls?
 - can you vi, vim or emac or..?
 - can you run ssh
- 
+  
 ## A simple "What is Docker and Docker Compose?"
 
 Docker containerizes applications.  A beginners way to think of a container is like a virtual server.  A container has

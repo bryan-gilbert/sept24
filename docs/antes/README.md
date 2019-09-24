@@ -106,6 +106,20 @@ Then wait a while and then see the list of snapshots for the droplet
     52544959    sept24-basic    snapshot    Debian                  false     20
 
 
+  doctl compute image list-user
+
+doctl compute droplet create --region nyc3 --image 5812605 --size 8gb foobar
+
+
+doctl compute droplet create sept24-2 --size 512mb --image 52658280 --region tor1 --ssh-keys d4:ae:e4:e6:8e:ca:ef:b7:ad:0d:7e:af:50:b0:04:61
+
+doctl compute droplet-action power-off 159830659
+doctl compute droplet-action power-off 52544959
+
+doctl compute droplet-action power-on 159830659
+doctl compute droplet-action power-on 52544959
+
+
 # Domain setup
 TODO: document how to set up the DNS
 

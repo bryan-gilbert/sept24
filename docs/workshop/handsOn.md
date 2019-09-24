@@ -32,8 +32,9 @@ Note sure if we need everything:
 
 Next add private key to the authentication agent. Your host will tell you the password during the workshop.
 
-    ssh-add ~/.ssh/sept24-ecdsa
-
+```
+ssh-add ~/.ssh/sept24-ecdsa
+```
 ## 3. Log on
 
 After this you can log onto your server.  No password is needed because of the magic of ssh keys. This is very secure
@@ -41,33 +42,41 @@ because it's not possible to use ssh on these servers with a password. The only 
 
 Time to run the show.  First open your browser and verify that you can not reach a web server at your domain
 
-    http://your_domain
+```
+http://your_domain
+```
 
 Now from your laptop log onto your server
 
-    ssh sept24@IP_ADDRESS
+```
+ssh sept24@IP_ADDRESS
+```
 
 ## 4. Explore project files setup env
 
 You server already has this repository cloned but you will update it first.
 
-    cd sept24
-    git pull
-
+```
+cd sept24
+git pull
+```
 Now change directory into the project and then into ``prep``. Explore the files.
 
-    vi dev.env
-    # change the value of DOMAIN to your domain. Save and exit.
-    # eg
-    # DOMAIN=sept24test.bryangilbert.ca
-    
-    # Now make your dev env file the active default. 
-    # See how easy it is to have a prod.env or a test.env and you just cp the environment you want into .env
-    cp dev.env .env
+```
+vi dev.env
+# change the value of DOMAIN to your domain. Save and exit.
+# eg
+# DOMAIN=sept24test.bryangilbert.ca
+
+# Now make your dev env file the active default. 
+# See how easy it is to have a prod.env or a test.env and you just cp the environment you want into .env
+cp dev.env .env
+```
 
 ## 5. Run the system
 
-    docker-compose -f d-c.yml up --build
-
+```
+docker-compose -f d-c.yml up --build
+```
 Return to your browser and refresh   http://your_domain.  See the content?  Return to your DO server and Ctrl-C to stop.
 
