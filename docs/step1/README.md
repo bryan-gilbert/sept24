@@ -9,6 +9,7 @@ This is a sample environment file. Before running any docker commands copy the d
 into the file that Docker will import automatically: ```.env```  You will need to do this on your server, when we log on. 
 For now this is just to show you how to switch between a dev and prod environment.
 
+```bash
     vi dev.env
     # change the value of DOMAIN to your domain. Save and exit.
     # eg
@@ -17,7 +18,7 @@ For now this is just to show you how to switch between a dev and prod environmen
     # Now make your dev env file the active default. 
     # See how easy it is to have a prod.env or a test.env and you just cp the environment you want into .env
     cp dev.env .env
-
+```
 
 ### content
 This is a directory and contains some static html for your first web site
@@ -93,3 +94,4 @@ BRYAN update this section
 ## Next ...
 Look at the [handsOn](handsOn.md) readme to try out the above. 
 
+To select a DO server see the [server list](serverList.md)

@@ -113,19 +113,18 @@ doctl compute droplet snapshots 159830659
 #ID          Name            Type        Distribution    Slug    Public    Min Disk
 #52544959    sept24-basic    snapshot    Debian                  false     20
 
-
+# List the images (includes snapshot images) 
 doctl compute image list-user
 
-doctl compute droplet create --region nyc3 --image 5812605 --size 8gb foobar
-
-
+# This is the command that I will repeat once for each participant
+# The image is the snapshot
+# The ssh key is the one created for this workshop
+# Create a $5/month server
 doctl compute droplet create sept24-2 --size 512mb --image 52658280 --region tor1 --ssh-keys d4:ae:e4:e6:8e:ca:ef:b7:ad:0d:7e:af:50:b0:04:61
 
+# Commands to power off and on a droplet
 doctl compute droplet-action power-off 159830659
-doctl compute droplet-action power-off 52544959
-
 doctl compute droplet-action power-on 159830659
-doctl compute droplet-action power-on 52544959
 ```
 
 # Domain setup

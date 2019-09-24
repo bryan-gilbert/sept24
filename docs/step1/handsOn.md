@@ -37,6 +37,8 @@ ssh-add ~/.ssh/sept24-ecdsa
 ```
 ## 3. Log on
 
+To select a DO server see the [server list](serverList.md)
+
 After this you can log onto your server.  No password is needed because of the magic of ssh keys. This is very secure
 because it's not possible to use ssh on these servers with a password. The only way to connect is via ssh key.
 

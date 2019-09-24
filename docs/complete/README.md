@@ -14,7 +14,7 @@ runs in this unprotected way.
 Passing in secrets like passwords and API keys is a challenge. But with the use of the
 ```.env``` file its not so hard.
 
-> Nginx
+## Nginx
 
 The complete sample has a nginx folder to contain all the files needed. Note
 
@@ -27,7 +27,7 @@ to have nginx look into the sites-enabled folder for web site configuration.
 The ```build.sh``` file will run inside the nginx container (thanks to the Dockerfile).
 
 
-> deployment
+## Deployment
 
 See the scripts inside the deployment folder's package.json
 ```json
