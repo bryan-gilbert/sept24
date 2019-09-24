@@ -51,62 +51,70 @@ Used the wrong name in that command so rename it
 
     doctl compute droplet-action rename 159830659 --droplet-name sept24-1
 
-## Secure the server
+## Prepare to ssh onto server
 
 Register the new SSH key with the mac's OS  
+```bash
+ssh-add ~/.ssh/sept24-ecdsa
 
-    ssh-add ~/.ssh/sept24-ecdsa
+#test ssh root@IP works
+ssh root@IP
+```
 
-test ssh root@IP works
+## Configure the server
+To securely configure a server clone my repo based on work by Jonathan Longe
+```bash
+git clone https://github.com/bryan-gilbert/basic-server.git
+cd basic-server
+git checkout extensions
 
-    ssh root@IP
+./configure_droplet.sh IP sept24
+```
 
-
-Configure the server
-
-    cd /path/bg-basic-server
-
-    ./configure_droplet.sh IP sept24
-
-(sept24 is the name of the new user)
+- IP is the IP Address to a DO server.
+- sept24 is the name of the new user
 
 When this is done we have 
   - SSH locked down to one user
   - Docker and Docker compose are installed
   - Node and NPM installed
   - certbot installed
-  - uncomplicated firewall installed
+  - uncomplicated firewall installed and set up
   - SSH daemon more secure
   
 Verify you can log on
+```bash
+ssh sept24@IP -p 22
+# exit the ssh session when done
+```
 
-    ssh sept24@159.89.116.165 -p 22
-    exit
+Note the -p 22 is needed.
 
-... configure the user account ...
-
-    ./configure_user.sh 159.89.116.165 sept24
-
+## Configure the user account ...
+```bash
+./configure_user.sh 159.89.116.165 sept24
+```
 Follow the instructions that have you log on and finalize the configuration.  
 When done the sept24 user has aliases and more to help with dev tasks
 
 ## Snapshot the basic server
+```bash
+doctl compute droplet list
+doctl compute droplet-action snapshot droplet_id --snapshot-name snapshot_name
+# eg
+doctl compute droplet-action snapshot 159830659 --snapshot-name sept24-basic
 
-    doctl compute droplet list
-    doctl compute droplet-action snapshot droplet_id --snapshot-name snapshot_name
-    # eg
-    doctl compute droplet-action snapshot 159830659 --snapshot-name sept24-basic
+#Then wait a while and then see the list of snapshots for the droplet
 
-Then wait a while and then see the list of snapshots for the droplet
-
-    doctl compute droplet snapshots droplet_id
-    # eg
-    doctl compute droplet snapshots 159830659
-    ID          Name            Type        Distribution    Slug    Public    Min Disk
-    52544959    sept24-basic    snapshot    Debian                  false     20
+doctl compute droplet snapshots droplet_id
+# eg
+doctl compute droplet snapshots 159830659
+# sample response
+#ID          Name            Type        Distribution    Slug    Public    Min Disk
+#52544959    sept24-basic    snapshot    Debian                  false     20
 
 
-  doctl compute image list-user
+doctl compute image list-user
 
 doctl compute droplet create --region nyc3 --image 5812605 --size 8gb foobar
 
@@ -118,35 +126,27 @@ doctl compute droplet-action power-off 52544959
 
 doctl compute droplet-action power-on 159830659
 doctl compute droplet-action power-on 52544959
-
+```
 
 # Domain setup
 TODO: document how to set up the DNS
+```bash
+doctl compute domain list
 
-    doctl compute domain list
+doctl compute domain create domain_name --ip-address droplet_ip_address
+#eg
+doctl compute domain create sept24test.bryangilbert.ca --ip-address 159.89.116.165
 
-    doctl compute domain create domain_name --ip-address droplet_ip_address
-    #eg
-    doctl compute domain create sept24test.bryangilbert.ca --ip-address 159.89.116.165
-
-    doctl compute domain records list domain_name
-    #eg
-    doctl compute domain records list sept24test.bryangilbert.ca
-
-
-TODO: 
-## Log on set up SSL
-Log onto the new droplet and set up SSL
+doctl compute domain records list domain_name
+#eg
+doctl compute domain records list sept24test.bryangilbert.ca
+```
 
 ## Last steps
 
 Before turning the servers over to you I will stop and remove all docker containers and images.
-
-    docker stop $(docker ps -a -q)
-    docker rm $(docker ps -a -q)
-    docker system prune -f
-    
-
-
-[checked]: ../images/checked-20.png "checked"
-[unchecked]: ../images/unchecked-20.png "unchecked"
+```bash
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+docker system prune -f
+```    
